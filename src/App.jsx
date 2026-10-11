@@ -32,7 +32,7 @@ function App() {
         <h1 className="h3 mb-4">Generatore QR Wi-Fi</h1>
 
         <div className="mb-3">
-          <label className="form-label" htmlFor="ssid">Nome rete (SSIS)</label>
+          <label className="form-label" htmlFor="ssid">Nome rete (SSID)</label>
           <input id="ssid" name="ssid" className="form-control" value={form.ssid} onChange={handleChange} />
         </div>
 

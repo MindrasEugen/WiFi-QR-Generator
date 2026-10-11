@@ -1,16 +1,33 @@
-# React + Vite
+# Generatore QR Wi-Fi
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Web app che genera un codice QR per collegarsi a una rete Wi-Fi. Inquadrandolo con la fotocamera di uno smartphone ci si connette alla rete senza digitare la password.
 
-Currently, two official plugins are available:
+## Funzionalità
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Inserimento del nome della rete (SSID)
+- Scelta del tipo di sicurezza: WPA/WPA2/WPA3, WEP, oppure rete aperta senza password (in quel caso il campo password viene nascosto)
+- Opzione "rete nascosta"
+- QR generato in tempo reale mentre si compila il form (appare solo quando l'SSID non è vuoto)
+- Download del QR come immagine PNG (1000×1000 px)
+- I caratteri speciali (`\ ; , : "`) in SSID e password vengono escapati correttamente secondo il formato standard `WIFI:T:...;S:...;P:...;H:true;;`
+- Tutto avviene nel browser: nessun dato viene inviato a un server
 
-## React Compiler
+## Tecnologie
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- Bootstrap 5
+- @lglab/react-qr-code
+- Oxlint
 
-## Expanding the Oxlint configuration
+## Avvio in locale
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+pnpm install
+pnpm dev
+```
+
+Altri comandi:
+
+- `pnpm build` - build di produzione
+- `pnpm lint` - controllo del codice con Oxlint
