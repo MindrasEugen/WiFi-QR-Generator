@@ -11,22 +11,12 @@ function App() {
       {mode === 'image' && <ImageQr />}
 
       <div className='mt-auto text-center pb-4'>
-        <div className='btn-group' role='group'>
-
-          <button
-            type='button'
-            className={`btn ${mode === 'wifi' ? 'btn-primary' : 'btn-outline-primary'}`}
-            onClick={()=> setMode('wifi')}>
-              Wi-Fi
-          </button>
-          <button
-            type='button'
-            className={`btn ${mode === 'image' ? 'btn-primary' : 'btn-outline-primary'}`}
-            onClick={() => setMode('image')}>
-              Immagine
-          </button>
-
-        </div>
+        <button
+          type='button'
+          className='btn btn-primary'
+          onClick={() => setMode(prev => prev === 'wifi' ? 'image' : 'wifi')}>
+            {mode === 'wifi' ? 'Passa a Immagine' : 'Passa a Wi-Fi'}
+        </button>
       </div>
     </div>
   )
