@@ -34,9 +34,9 @@ function ImageQr(){
             {canGenerate && (
                 <div className='text-center'>
                     <ReactQRCode ref={qrRef} value={clearUrl} size={256} level='Q' background='#ffffff'/>
-                    {/* <div className='mt-3'>
-                        <img src={clearUrl} alt='anteprima' className='img-fluid rounded' style={{ maxHeight:200}} onError={()=> setImageError(true)}/>
-                    </div> */}
+                    { <div className='mt-3'>
+                        <img src={clearUrl} alt='anteprima' className='img-fluid rounded' style={{ display: 'none'}} onError={()=> setImageError(true)}/>
+                    </div> }
                     {imageError &&(
                         <div className='alert alert-warning mt-3'>
                             Non riesco a caricare l'immagine: controlla il link.
