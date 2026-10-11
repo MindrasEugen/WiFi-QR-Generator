@@ -3,8 +3,8 @@ import { ReactQRCode } from '@lglab/react-qr-code'
 import { buildWifiString } from '../utility/wifiString.js'
 
 const DEFAULT_FORM = {
-  ssid: 'Wind3 HUB-386C7F',
-  password: '517tlq84wxdhyajd',
+  ssid: import.meta.env.VITE_DEFAULT_SSID ?? '',
+  password: import.meta.env.VITE_DEFAULT_PASSWORD ?? '',
   security: 'WPA',
   hidden: false,
 };
